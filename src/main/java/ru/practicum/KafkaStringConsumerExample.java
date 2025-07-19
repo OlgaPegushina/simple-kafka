@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 
-public class KafkaConsumerExample {
+public class KafkaStringConsumerExample {
 
     public static void main(String[] args) {
         Properties config = new Properties();

@@ -7,7 +7,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
 
-public class KafkaProducerExample {
+public class KafkaStringProducerExample {
 
     public static void main(String[] args) {
         Properties config = new Properties();
