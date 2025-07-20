@@ -1,6 +1,6 @@
 package ru.practicum;
 
-public class WeatherEvent {
+public class WeatherEventOld {
     private double latitude;
     private double longitude;
     private double temperature;
@@ -31,7 +31,7 @@ public class WeatherEvent {
 
     @Override
     public String toString() {
-        return String.format("WeatherEvent{latitude=%s,longitude=%s,temperature=%s}",
+        return String.format("WeatherEventOld{latitude=%s,longitude=%s,temperature=%s}",
                 latitude, longitude, temperature);
     }
 }

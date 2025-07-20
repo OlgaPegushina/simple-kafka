@@ -15,15 +15,15 @@ public class KafkaJsonProducerExample {
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.VoidSerializer");
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "ru.practicum.WeatherEventJsonSerializer");
 
-        Producer<Void, WeatherEvent> producer = new KafkaProducer<>(config);
+        Producer<Void, WeatherEventOld> producer = new KafkaProducer<>(config);
 
-        WeatherEvent message = new WeatherEvent();
+        WeatherEventOld message = new WeatherEventOld();
         message.setTemperature(33.5);
         message.setLatitude(6.1944);
         message.setLongitude(106.8229);
 
         String topic = "weather-events";
-        ProducerRecord<Void, WeatherEvent> record = new ProducerRecord<>(topic, message);
+        ProducerRecord<Void, WeatherEventOld> record = new ProducerRecord<>(topic, message);
 
         producer.send(record);
 

@@ -15,12 +15,12 @@ public class KafkaJsonConsumerExample {
         config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "ru.practicum.WeatherEventJsonDeserializer");
         config.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-service-1");
 
-        try (Consumer<Void, WeatherEvent> consumer = new KafkaConsumer<>(config)) {
+        try (Consumer<Void, WeatherEventOld> consumer = new KafkaConsumer<>(config)) {
             consumer.subscribe(List.of("example-topic", "weather-events"));
 
             while (true) {
-                ConsumerRecords<Void, WeatherEvent> records = consumer.poll(Duration.ofMillis(100));
-                for (ConsumerRecord<Void, WeatherEvent> record : records) {
+                ConsumerRecords<Void, WeatherEventOld> records = consumer.poll(Duration.ofMillis(100));
+                for (ConsumerRecord<Void, WeatherEventOld> record : records) {
                     System.out.printf("topic = %s, offset = %d, value = %s%n", record.topic(), record.offset(), record.value());
                 }
             }
